@@ -1,0 +1,25 @@
+import org.example.Student;
+
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
+
+@Path("/students")
+public class StudentService {
+
+    @GET
+    @Path("/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Student getStudent(@PathParam("id") int id) {
+        // Retrieve student with the given id from a data source
+        // Return the student object as JSON
+        return null;
+    }
+
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void createStudent(Student student) {
+        // Save the student object to a data source
+    }
+
+    // Add other methods for updating, deleting, etc.
+}
