@@ -1,0 +1,14 @@
+package org.example;
+import javax.security.auth.Subject;
+import java.util.List;
+
+public class Student {
+    private String name;
+    private int age;
+    private float gpa;
+    private boolean isActive;
+    private char gender;
+    private List<Subject> subjects;
+
+    // Constructor, getters, setters, etc.
+}
