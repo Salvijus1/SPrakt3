@@ -1,25 +1,38 @@
-import org.example.Student;
+package org.example;
 
-import javax.ws.rs.*;
-import javax.ws.rs.core.MediaType;
+import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.MediaType;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Path("/students")
 public class StudentService {
+    private static List<Student> students = new ArrayList<>();
 
     @GET
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Student getStudent(@PathParam("id") int id) {
-        // Retrieve student with the given id from a data source
-        // Return the student object as JSON
-        return null;
+        return students.get(id);
     }
 
     @POST
-    @Consumes(MediaType.APPLICATION_JSON)
+    // @Consumes(MediaType.APPLICATION_JSON)
     public void createStudent(Student student) {
-        // Save the student object to a data source
+        students.add(student);
     }
 
-    // Add other methods for updating, deleting, etc.
+    @PUT
+    @Path("/{id}")
+    // @Consumes(MediaType.APPLICATION_JSON)
+    public void updateStudent(@PathParam("id") int id, Student student) {
+        students.set(id, student);
+    }
+
+    @DELETE
+    @Path("/{id}")
+    public void deleteStudent(@PathParam("id") int id) {
+        students.remove(id);
+    }
 }
