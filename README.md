@@ -1,10 +1,5 @@
 # SPrakt3
 
-# Test API Documentation
-
-Welcome to the documentation for the Test API. This API is designed for testing purposes and offers basic endpoints to explore.
-
-## Endpoints
 
 ### Endpoint 1: `/api/endpoint1`
 
